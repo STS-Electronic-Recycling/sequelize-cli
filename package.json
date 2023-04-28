@@ -1,7 +1,7 @@
 {
-  "name": "sequelize-cli",
-  "version": "6.3.0",
-  "description": "The Sequelize CLI",
+  "name": "@stsrecycle/sequelize-cli",
+  "version": "6.6.0.1",
+  "description": "The Sequelize CLI (support multiple databases)",
   "types": "./types.d.ts",
   "bin": {
     "sequelize": "./lib/sequelize",
@@ -64,7 +64,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/sequelize/cli.git"
+    "url": "git://github.com/STS-Electronic-Recycling/sequelize-cli.git"
   },
   "keywords": [
     "sequelize",
@@ -82,6 +82,10 @@
     {
       "name": "Sushant Dhiman",
       "email": "sushantdhiman@outlook.com"
+    },
+    {
+      "name": "Keith Homco",
+      "email": "khomco@stsrecycle.com"
     }
   ],
   "license": "MIT",
