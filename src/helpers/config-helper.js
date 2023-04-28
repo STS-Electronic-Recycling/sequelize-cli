@@ -108,6 +108,7 @@ const api = {
   readConfig() {
     if (!api.config) {
       const env = helpers.generic.getEnvironment();
+      const envNamespace = helpers.generic.getEnvironmentNamespace();
 
       if (api.rawConfig === undefined) {
         throw new Error(
@@ -138,7 +139,13 @@ const api = {
       if (api.rawConfig[env]) {
         helpers.view.log('Using environment "' + env + '".');
 
-        api.rawConfig = api.rawConfig[env];
+        if (envNamespace && api.rawConfig[env][envNamespace]) {
+          helpers.view.log('Using namespace "' + envNamespace + '".');
+
+          api.rawConfig = api.rawConfig[env][envNamespace];
+        } else {
+          api.rawConfig = api.rawConfig[env];
+        }
       }
 
       // The Sequelize library needs a function passed in to its logging option

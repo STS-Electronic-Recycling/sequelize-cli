@@ -65,6 +65,31 @@ The properties can also be combined to a `url`:
 In case of a JS file it obviously needs to `module.exports` the object.
 Optionally, it's possible to put all the configuration to the `url` option. The format is explained in the section below.
 
+### Support Multiple Databases
+
+You can target a specific database configuration using `--env-ns` (environment namespace). Here is how a section of the configuration file might look like:
+
+```json
+{
+  "production":  {
+    "default": {
+      "username": "root",
+      "password": null,
+      "database": "new_database_production",
+      "host": "new.database.corp",
+      "dialect": "mysql"
+    },
+    "legacy": {
+      "username": "root",
+      "password": null,
+      "database": "legacy_database_production",
+      "host": "legacy.database.corp",
+      "dialect": "mssql"
+    }
+  }
+}
+```
+
 ### Configuration Connection String
 
 As an alternative to the `--config` option with configuration files defining your database, you can

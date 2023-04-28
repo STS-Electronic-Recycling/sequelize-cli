@@ -27,6 +27,10 @@ export function _baseOptions(yargs) {
       default: 'development',
       type: 'string',
     })
+    .option('env-ns', {
+      describe: 'The namespace within the environment',
+      type: 'string',
+    })
     .option('config', {
       describe: 'The path to the config file',
       type: 'string',
