@@ -11,6 +11,10 @@ const generic = {
     return args.env || process.env.NODE_ENV || 'development';
   },
 
+  getEnvironmentNamespace: () => {
+    return args['env-ns'];
+  },
+
   getSequelize: (file) => {
     const resolvePath = file ? path.join('sequelize', file) : 'sequelize';
     const resolveOptions = { basedir: process.cwd() };
